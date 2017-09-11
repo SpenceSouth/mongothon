@@ -29,7 +29,7 @@ from mongothon import Schema
 car_schema = Schema({
     "make":         {"type": basestring, "required": True},
     "model":        {"type": basestring, "required": True},
-    "num_wheels":   {"type": int,        "default": 4, "validates": gte(0)}
+    "num_wheels":   {"type": int,        "default": 4, "validates": gte(0)},
     "color":        {"type": basestring, "validates": one_of("red", "green", "blue")}
 })
 ```
@@ -66,7 +66,7 @@ Validate a document
 car = new Car({
     "make":         "Ford",
     "model":        "F-150",
-    "num_wheels":   -1
+    "num_wheels":   -1,
     "color":        "red"
 })
 
